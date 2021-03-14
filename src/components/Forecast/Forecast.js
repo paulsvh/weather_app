@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const Forecast = () => {
+    let [responseObj, setResponseObj] = useState({});
     function getForecast() {
         fetch("https://community-open-weather-map.p.rapidapi.com/weather?q=Seattle&lat=0&lon=0&callback=test&id=2172797&lang=null&units=%22metric%22%20or%20%22imperial%22&mode=xml%2C%20html", {
 	        "method": "GET",
@@ -8,6 +9,10 @@ const Forecast = () => {
 		        "x-rapidapi-key": "007ca66fabmsh50f78cebc444c66p18f481jsn99e4d7fc2fae",
 		        "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
 	    }
+        .then(resp => resp.json())
+        .then(resp => {
+            setResponseObj(response)
+        })
 })
     }
     return (
