@@ -1,4 +1,6 @@
+import React from 'react';
 import './App.css';
+import Forecast from "./components/Forecast/Forecast.js"
 
 function App() {
   return (
@@ -7,7 +9,7 @@ function App() {
         <h1>React Weather App</h1>
       </header>
       <main>
-        {/* add weather fetching component here*/}
+        <Forecast />
       </main>
       <footer>
         Created by Paul von Hagen
