@@ -11,7 +11,7 @@ const Forecast = () => {
 	    }
         .then(resp => resp.json())
         .then(resp => {
-            setResponseObj(response)
+            setResponseObj(resp)
         })
 })
     }
