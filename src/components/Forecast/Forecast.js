@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Conditions from '../Conditions/Conditions.js'
 
 const Forecast = () => {
     let [responseObj, setResponseObj] = useState({});
@@ -23,6 +24,7 @@ const Forecast = () => {
                 {JSON.stringify(responseObj)}
             </div>
             <button onClick={getForecast}>Get Forecast</button>
+            <Conditions responseObj={responseObj} />
         </div>
     )
 }
