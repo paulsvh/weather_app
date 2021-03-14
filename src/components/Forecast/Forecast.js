@@ -20,9 +20,6 @@ const Forecast = () => {
     return (
         <div>
             <h2>Find Current Weather Conditions</h2>
-            <div>
-                {JSON.stringify(responseObj)}
-            </div>
             <button onClick={getForecast}>Get Forecast</button>
             <Conditions responseObj={responseObj} />
         </div>
