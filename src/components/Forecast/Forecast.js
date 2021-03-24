@@ -3,6 +3,8 @@ import Conditions from '../Conditions/Conditions.js'
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 const Forecast = () => {
+    let [city, setCity] = useState('');
+    let [unit, setUnit] = useState('imperial');
     let [responseObj, setResponseObj] = useState({});
     function getForecast() {
         fetch("https://community-open-weather-map.p.rapidapi.com/weather?q=seattle", {
