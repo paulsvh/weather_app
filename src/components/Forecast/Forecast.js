@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Conditions from '../Conditions/Conditions.js'
+import classes from './Forecast.module.css'
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 const Forecast = () => {
@@ -31,11 +32,12 @@ const Forecast = () => {
                     type="text"
                     placeholder="Enter City"
                     maxLength="50"
+                    className={classes.textInput}
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                 />
 
-                <label>
+                <label className={classes.Radio}>
                     <input
                         type="radio"
                         name="units"
@@ -46,7 +48,7 @@ const Forecast = () => {
                     Farenheit
                 </label>
 
-                <label>
+                <label className={classes.Radio}>
                     <input
                         type="radio"
                         name="units"
@@ -57,7 +59,7 @@ const Forecast = () => {
                     Celcius
                 </label>
 
-                <button type="submit">Get Forecast</button>
+                <button type="submit" className={classes.Button}>Get Forecast</button>
 
             </form>
             <Conditions responseObj={responseObj} />
