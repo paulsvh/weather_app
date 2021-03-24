@@ -5,9 +5,10 @@ const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 const Forecast = () => {
     let [city, setCity] = useState('');
     let [unit, setUnit] = useState('imperial');
+    const uriEncodedCity = encodeURIComponent(city);
     let [responseObj, setResponseObj] = useState({});
     function getForecast() {
-        fetch("https://community-open-weather-map.p.rapidapi.com/weather?q=seattle", {
+        fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`, {
 	        "method": "GET",
 	        "headers": {
 		        "x-rapidapi-key": API_KEY,
