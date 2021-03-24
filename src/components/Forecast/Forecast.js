@@ -7,7 +7,8 @@ const Forecast = () => {
     let [unit, setUnit] = useState('imperial');
     const uriEncodedCity = encodeURIComponent(city);
     let [responseObj, setResponseObj] = useState({});
-    function getForecast() {
+    function getForecast(e) {
+        e.preventDefault();
         fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`, {
 	        "method": "GET",
 	        "headers": {
