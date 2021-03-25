@@ -58,7 +58,7 @@ const Forecast = () => {
                     />
                     Celcius
                 </label>
-
+                <br/><br/>
                 <button type="submit" className={classes.Button}>Get Forecast</button>
 
             </form>
